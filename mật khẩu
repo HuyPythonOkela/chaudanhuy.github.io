@@ -1,0 +1,76 @@
+import re
+import time
+import os
+os.system('cls' if os.name=='nt' else 'clear')
+h = 0
+while h == 0:
+    n = str(input("Đặt mật khẩu: "))
+    f = set(n)
+    r = re.sub(r'\D','', n)
+    v = set(r)
+    r2 = f - v
+    if 'a' in r2 or 'A' in r2 or 'b' in r2 or 'B' in r2 or 'c' in r2 or 'C' in r2 or 'd' in r2 or 'D' in r2 or 'e' in r2 or 'E' in r2 or 'f' in r2 or 'F' in r2 or 'g' in r2 or 'G' in r2 or 'h' in r2 or 'H' in r2 or 'i' in r2 or 'I' in r2 or 'j' in r2 or 'J' in r2 or 'k' in r2 or 'K' in r2 or 'l' in r2 or 'L' in r2 or 'm' in r2 or 'M' in r2 or 'n' in r2 or 'N' in r2 or 'o' in r2 or 'O' in r2 or 'p' in r2 or 'P' in r2 or 'q' in r2 or 'Q' in r2 or 'r' in r2 or 'R' in r2 or 's'in r2 or 'S' in r2 or 't' in r2 or 'T' in r2 or 'u' in r2 or 'U' in r2 or 'v' in r2 or 'V' in r2 or 'w' in r2 or 'W' in r2 or 'x' in r2 or 'X' in r2 or 'y' in r2 or 'Y' in r2 or 'z' in r2 or 'Z' in r2:
+        if '1' in v or '2' in v or '3' in v or '4' in v or '5' in v or '6' in v or '7' in v or '8' in v or '9' in v or '0' in v:
+            if len(n) >= 8:
+                x = 0
+                u = 5
+                while x <= 5:
+                    c = input("Xác nhận mật khẩu: ")
+                    if c == n:
+                        print("")
+                        for op in 'Chính xác! Đã mở khóa!':
+                            print(op,end='',flush=True)
+                            time.sleep(0.1)
+                        print()
+                        h = 1
+                        break                    
+                    else:
+                        print("Lỗi! Bạn còn {} lần để xác nhận!".format(u))
+                        x += 1
+                        u -= 1
+                        if u == -1:
+                            print("Thử lại sau 10 giây!")
+                            print(10,end=' ',flush=True)
+                            time.sleep(1)
+                            print(9,end=' ',flush=True)
+                            time.sleep(1)
+                            print(8,end=' ',flush=True)
+                            time.sleep(1)
+                            print(7,end=' ',flush=True)
+                            time.sleep(1)
+                            print(6,end=' ',flush=True)
+                            time.sleep(1)
+                            print(5,end=' ',flush=True)
+                            time.sleep(1)
+                            print(4,end=' ',flush=True)
+                            time.sleep(1)
+                            print(3,end=' ',flush=True)
+                            time.sleep(1)
+                            print(2,end=' ',flush=True)
+                            time.sleep(1)
+                            print(1,end=' ',flush=True)
+                            time.sleep(1)
+                            print(0)
+                            x = 0
+                            u = 5
+            else:
+                print("Mật khẩu phải có tối thiểu 8 kí tự!") 
+        else:
+            if len(f) >= 8:
+                print("Mật khẩu cần có chữ số!")
+            else:
+                print('Mật khẩu cần có chữ số và tối thiểu 8 kí tự!')
+    elif '1' in v or '2' in v or '3' in v or '4' in v or '5' in v or '6' in v or '7' in v or '8' in v or '9' in v or '0' in v:
+        if len(n) >= 8:
+            print('Mật khẩu phải có chữ cái!')
+        else:
+            print("Mật khẩu cần có chữ cái và tối thiểu 8 kí tự!")
+    elif len(n) >= 8:
+        print("Mật khẩu cần có chữ cái và chữ số!")
+    else:
+        print("Mật khẩu cần có chữ cái, chữ số và tối thiểu 8 kí tự!")
+    h = h
+else:
+    pass
+
+
